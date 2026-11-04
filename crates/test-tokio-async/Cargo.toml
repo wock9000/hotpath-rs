@@ -21,3 +21,9 @@ hotpath = ["hotpath/hotpath"]
 hotpath-alloc = ["hotpath/hotpath-alloc"]
 hotpath-cpu = ["hotpath/hotpath-cpu"]
 dev = ["hotpath/dev"]
+
+# Uses hotpath::{format_debug_truncated, MAX_LOG_LEN, floor_char_boundary},
+# which only exist with the `hotpath` feature.
+[[example]]
+name = "benchmark_truncate"
+required-features = ["hotpath"]
