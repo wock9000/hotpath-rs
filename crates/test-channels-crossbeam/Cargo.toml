@@ -15,3 +15,8 @@ hotpath = ["hotpath/hotpath"]
 [dev-dependencies]
 ureq = { version = "3", features = ["json"] }
 serde_json = "1.0"
+
+# Without the `hotpath` feature HotpathGuard is a no-op type with no Drop impl,
+# so the examples' explicit drop(guard) trips this lint in default builds.
+[lints.clippy]
+drop_non_drop = "allow"

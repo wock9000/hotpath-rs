@@ -3,8 +3,8 @@ fn main() {
     hotpath::gauge!("queue_size").inc(5.0);
     hotpath::gauge!("queue_size").dec(3);
 
-    let dynamic_key = format!("connections_{}", 1);
-    hotpath::gauge!(dynamic_key).set(42);
+    let _dynamic_key = format!("connections_{}", 1);
+    hotpath::gauge!(_dynamic_key).set(42);
 
     std::thread::sleep(std::time::Duration::from_millis(
         std::env::var("TEST_SLEEP_MS")

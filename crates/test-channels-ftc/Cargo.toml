@@ -14,3 +14,8 @@ async-io = "2.0"
 
 [features]
 hotpath = ["hotpath/hotpath"]
+
+# Without the `hotpath` feature HotpathGuard is a no-op type with no Drop impl,
+# so the examples' explicit drop(guard) trips this lint in default builds.
+[lints.clippy]
+drop_non_drop = "allow"

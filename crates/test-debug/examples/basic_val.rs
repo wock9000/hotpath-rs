@@ -2,8 +2,8 @@ fn main() {
     let counter = 42;
     hotpath::val!("counter").set(&counter);
     hotpath::val!("counter").set(&(counter + 1));
-    let dynamic_key = format!("status_{}", 1);
-    hotpath::val!(dynamic_key).set(&"running");
+    let _dynamic_key = format!("status_{}", 1);
+    hotpath::val!(_dynamic_key).set(&"running");
 
     std::thread::sleep(std::time::Duration::from_millis(
         std::env::var("TEST_SLEEP_MS")
